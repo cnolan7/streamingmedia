@@ -76,6 +76,40 @@ footer{
     text-align: center;
 }
 
+#trending ::-webkit-scrollbar{
+    width: 10px;
+}
+
+#trending ::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+
+#trending ::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 5px;
+}
+
+#trending ::-webkit-scrollbar-thumb:hover{
+    background-color: #555;
+}
+
+#playlists ::-web-scrollbar, #curated ::-webkit-scrollbar{
+    width: 10px;
+}
+
+#playlists ::-web-scrollbar-track, #curated ::-webkit-scrollbar-track{
+    background-color: #f7f7f7;
+}
+
+#playlists ::-web-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb{
+    background-color: #888;
+    border-radius: 5px;
+}
+
+#playlists ::-web-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover{
+    background-color: #555;
+}
+
 @media screen and (max-width: 700px) {
     .container{
         width: 95%;
@@ -90,3 +124,4 @@ footer{
         margin-bottom: 10px;
     }
 }
+
