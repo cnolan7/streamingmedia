@@ -1,3 +1,71 @@
+ul {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 28px 20px;
+    position: relative;
+    user-select: none;
+}
+label span {
+    background-color: #ffffff;
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background-color .2s ease-out;
+    width: 18px;
+}
+label span:before, label span:after {
+    background: #ffffff;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+}
+label span:before {
+    top: 5px;
+}
+label span:after {
+    top: -5px;
+}
+input {
+    display: none;
+}
+input:checked ~ ul {
+    max-height: 500px;
+}
+input:checked ~ label span {
+    background: transparent;
+}
+input:checked ~ label span:before {
+    transform: rotate(-45deg);
+}
+input:checked ~ label span:after {
+    transform: rotate(45deg);
+}
+input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+}
+
+@media screen and (min-width:834px) {
+    ul {
+        overflow: visible;
+        position: absolute;
+        top: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    label span, input {
+        display: none;
+    }
+}
+
+
 *{
     margin: 0;
     padding: 0;
@@ -8,6 +76,8 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: #f7f7f7;
     line-height: 1.6;
+    display: flex;
+    flex-direction: column;
 }
 
 .container{
@@ -21,6 +91,7 @@ header{
     color: #fff;
     text-align: center;
     padding: 20px 0;
+    order:2;
 }
 
 header a{
@@ -35,6 +106,7 @@ nav{
     align-items: center;
     background: #333;
     padding: 0.5rem 1rem;
+    order: 1;
 }
 
 nav ul{
@@ -52,6 +124,7 @@ nav ul li:hover{
 
 .main{
     padding: 30px 0;
+    order:2;
 }
 
 .audio-section{
@@ -74,6 +147,7 @@ footer{
     color: white;
     padding: 20px;
     text-align: center;
+    order:2;
 }
 
 #trending ::-webkit-scrollbar{
@@ -93,20 +167,20 @@ footer{
     background-color: #555;
 }
 
-#playlists ::-web-scrollbar, #curated ::-webkit-scrollbar{
+#playlists ::-webkit-scrollbar, #curated ::-webkit-scrollbar{
     width: 10px;
 }
 
-#playlists ::-web-scrollbar-track, #curated ::-webkit-scrollbar-track{
+#playlists ::-webkit-scrollbar-track, #curated ::-webkit-scrollbar-track{
     background-color: #f7f7f7;
 }
 
-#playlists ::-web-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb{
+#playlists ::-webkit-scrollbar-thumb, #curated ::-webkit-scrollbar-thumb{
     background-color: #888;
     border-radius: 5px;
 }
 
-#playlists ::-web-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover{
+#playlists ::-webkit-scrollbar-thumb:hover, #curated ::-webkit-scrollbar-thumb:hover{
     background-color: #555;
 }
 
