@@ -101,7 +101,7 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 }
 
 header, main, footer{
-    background-color: #333; /*Dark bg color*/
+    background-color: #2104D9;
     color: #fff;
     text-align: center;
     padding: 20px 0;
