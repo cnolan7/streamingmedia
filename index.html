@@ -13,7 +13,7 @@
         <p>This station is dedicated to the soothing sounds of smooth jazz. This genre of commercially oriented crossover jazz became dominant in the 1980s and early 1990s.</p>
     </header>
     <nav>
-        <h2>Main Navigation</h2>
+        
         <input type="checkbox" id="dropdown" />
         <label for="dropdown"><span></span></label>
         <ul>
@@ -25,62 +25,90 @@
         </ul>
     </nav>
     <main>
-        
-        <section id="trending-songs">
+        <section id="trending">
             <h2>Trending Songs</h2>
-        </section>
+            <div class="scroll">
+            <section>
+                <div>
+                <h3>Aloma</h3>
+                    <dl>
+                        <dt>Artist</dt>
+                        <dd>Cali</dd>
+                    </dl>
+                </div>
+                <img src="images/aloma-cover.png" alt="white dove on black Background">
+                <audio 
+                    controls
+                    src="audio/aloma.mp3">
+                    Your browser does not support the <code>audio</code>element.
+                </audio>
+            </section>
+            <section>
+                <div>
+                <h3>My Road</h3>
+                    <dl>
+                        <dt>Artist</dt>
+                        <dd>Nesterouk</dd>
+                    </dl>
+                </div>
+                <img src="images/my-road-cover.png" alt="middle of the road in a desert highway">
+                <audio 
+                    controls
+                    src="audio/my-road.mp3">
+                    Your browser does not support the <code>audio</code>element.
+                </audio>
+            </section>
 
-        <section>
-            <h3>Aloma</h3>
-            <h4>Artist Cali</h4>
-            <img src="images/aloma-cover.png" alt="Image for Smoothies">
-            <audio controls>
-                <source src="audio/aloma.mp3" type="audio/mpeg">
-            </audio>
-        </section>
-
-        <section>
-            <h3>My Road</h3>
-            <h4>Artist Nesterouk</h4>
-            <img src="images/my-road-cover.png" alt="Image for Smoothies">
-            <audio controls>
-                <source src="audio/my-road.mp3" type="audio/mpeg">
-            </audio>
-        </section>
-
-        <section>
-            <h3>Papaya</h3>
-            <h4>Artist Dredstudio</h4>
-            <img src="images/papaya-cover.png" alt="Image for Smoothies">
-            <audio controls>
-                <source src="audio/papaya.mp3" type="audio/mpeg">
-                Your brower doesn't support the audio element.
-            </audio>
-        </section>
+            <section>
+                <div>
+                    <h3>Papaya</h3>
+                    <dl>
+                        <dt>Artist</dt>
+                        <dd>Dredstudio</dd>
+                    </dl>
+                </div>
+                <img src="images/papaya-cover.png" alt="Image for Smoothies">
+                <audio controls>
+                    <source src="audio/papaya.mp3" type="audio/mpeg">
+                    Your brower doesn't support the audio element.
+                </audio>
+            </section>
 
                 
-        <section>
-            <h3>Smoothies</h3>
-            <h4>Artist Black Rhomb</h4>
-            <img src="images/smoothies-cover.png" alt="Image for Smoothies">
-            <audio controls>
-                <source src="audio/smoothies.mp3" type="audio/mpeg">
-            </audio>
-        </section>
+            <section>
+                <div>
+                    <h3>Smoothies</h3>
+                    <dl>
+                        <dt>Artist</dt>
+                        <dd>Black Rhomb</dd>
+                    </dl>
+                </div>
+                <img src="images/smoothies-cover.png" alt="A papaya cut in half on a bright green background">
+                <audio controls>
+                    <source src="audio/smoothies.mp3" type="audio/mpeg">
+                </audio>
+            </section>
 
-        <!--successful performance-->
-        <section>
-            <h3>Successful Performance</h3>
-            <h4>Artist Ricky Bombino</h4>
-            <img src="images/successful-performance-cover.png" alt="Image for successful-performance">
-            <audio controls>
-                <source src="audio/successful-performance.mp3" type="audio/mpeg">
-            </audio>
-            <p></p>
-            <h4>More trending</h4>
-        </section>
+            <!--successful performance-->
+            <section>
+                <div>
+                    <h3>Successful Performance</h3>
+                    <dl>
+                        <dt>Artist</dt>
+                        <dd>Ricky Bombino</dd>
+                    </dl>
+                </div>
+                <img src="images/successful-performance-cover.png" alt="Image for successful-performance">
+                <audio controls>
+                    <source src="audio/successful-performance.mp3" type="audio/mpeg">
+                </audio>
+                <p></p>
+            </section>
+            </div>
 
-        <section>
+            <button>More trending</button>
+
+        <section id="your-playlists">
             <h3>Your Playlists</h3>
             <img src="images/best-of-2020-cover.png" alt="Image for best-of-2020-cover">
             <h3>Best of 2020</h3>
@@ -114,14 +142,17 @@
             <h4>Background music to keep you going while you study</h4>
         </section>
         
-        <section>
+        <section id="curated">
             <h4>All your playlists</h4>
             <p></p>
             <h3>Curated Playlists</h3>
             <p></p>
             <img src="images/boozy-brunch-cover.png" alt="Image for boozy-brunch-cover">
+            <h4>Boozy Brunch</h4>
             <h4>Light up the afternoon with these energetic hits.</h4>
         </section>
+        
+        
         <!--dinner party-->
         <section>
             <img src="images/dinner-party-cover.png" alt="Image for dinner-party-cover">
@@ -151,6 +182,10 @@
             <p></p>
             <h4>More curated</h4>
         </section>
+
+    <button>All your playlists</button>
+
+    <button>More Curated</button>
          
     </main>
     <footer>
