@@ -31,6 +31,7 @@ label {
     padding: 28px 20px;
     position: relative;
     user-select: none;
+    
 }
 label span {
     background-color: #ffffff;
@@ -48,6 +49,7 @@ label span:before, label span:after {
     position: absolute;
     transition: all .2s ease-out;
     width: 100%;
+    
 }
 label span:before {
     top: 5px;
@@ -89,8 +91,8 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
 
 
 *{
-    margin: 0;
-    padding: 0;
+    margin: 2px;
+    padding: 10;
     box-sizing: border-box;
 }
 
@@ -100,38 +102,72 @@ input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps)
     overflow: hidden;
 }
 
-header, main, footer{
-    background-color: #2104D9;
+header{
+    background-color: #020873;
     color: #fff;
-    text-align: center;
+    text-align: left;
     padding: 20px 0;
     order:2;
 }
 
+header p{
+    text-align: left;
+}
+main{
+    background-color: #020873;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    /*flex-grow: 1;*/
+    order:2;
+}
 
+footer{
+    background-color: #ffffff;
+    color: #590242;
+    text-align: center;
+    padding: 20px;
+    order: 2;
+}
 
 nav{
-   
-    justify-content: space-between;
+    display: flex;
     align-items: center;
-    background: #333;
+    background: #020569;
     padding: 0.5rem 1rem;
-    order: 1;
+       
+}
+
+#muzakMaker {
+    font-variant: small-caps;
+    top:0;
     position: absolute;
+    color: #ffffff;
+    margin-right: auto;
+    background-color: #020659;
+    padding: 20px;
+    
 }
 
 nav ul{
     display: flex;
+    justify-content: right;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-grow: 1;
 }
 
-nav ul li{
-
-    margin-right: 20px;
+nav ul li a{
+    color: white;
+    margin-right: 0 20px;
+    text-decoration: none;
 }
 
 nav ul li:hover{
     background-color: #555;
 }
+
 
 .main{
     padding: 30px 0;
@@ -153,21 +189,7 @@ nav ul li:hover{
     margin-bottom: 20px;
 }
 
-footer{
-    background: #333;
-    color: white;
-    padding: 20px;
-    text-align: center;
-    order:2;
-}
 
-#muzakMaker {
-    font-variant: small-caps;
-    z-index: 10; /* Ensure it stacks on top */
-    background-color: #ffffff; 
-    width: 100%; /* Ensure it spans the full width of the nav */
-    top:0;
-}
 
 .scroll{
     display:grid;
@@ -185,6 +207,7 @@ footer{
     position: absolute;
     top: 251px;
     background-color: rgba(255, 255, 255, .75);
+    
     padding: 5px;
     height: 50px;
     width: 350px;
@@ -268,6 +291,10 @@ audio::webkit-media-controls-play-enclosure{
     background: #ffffff;
 }
 
+#trending {
+    background-color: white;
+}
+
 body{
     margin:0 auto;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -282,14 +309,72 @@ button{
     font-size: 12;
     background-color: #590242;
     color: white;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 80px;
+    margin-right: 10px;
+    align-self: flex-end;
+}
+
+.button-container{
+    text-align: right;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.button-container:hover{
+    background-color: #020659;
 }
 
 button:hover{
     background-color: #020569;
+}
+
+#playlists-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     
 }
 
-@media screen and (max-width: 700px) {
+#playlists-container img{
+    max-width: 50%;
+    height: auto;
+    width: auto;
+}
+
+#playlists-container div{
+    flex: 1;
+}
+
+#playlists-container h2{
+    color: #590242;
+    font-weight: bold;
+    margin-left: 20px;
+    position: relative;
+    top: 10px;
+    left: 0;
+    z-index: 10;
+}
+
+#playlists-container section{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+#playlists-container h3,p, h4{
+
+    color: white;
+    text-align: right;
+}
+
+#your-playlists, #curated{
+    height: 300px;
+    overflow-y: auto;
+}
+/*@media screen and (max-width: 700px) {
     .container{
         width: 95%;
     }
@@ -302,47 +387,73 @@ button:hover{
     nav ul li {
         margin-bottom: 10px;
     }
+}*/
+
+@media screen and (min-width: 376px){
+    nav ul{
+        display: flex;
+        width: 25%;
+    }
+    
 }
 
-
-@media (max-width: 375px) {
-
+@media screen and (max-width: 375px){
     nav ul{
         display: none;
     }
-    /*#muzakMaker {
+    label[for="dropdown"]{
+        display: block;
+        position: absolute;
+        top:20px;
+        right: 20px;
+        width: 30px;
+        height: 3px;
+        background-color: #333;
+        cursor: pointer;
+        z-index: 15;
+    }
 
-        font-variant: small-caps;
-        /*position: absolute;
-        top: 0; 
-        left: 0; /* Align to the left of the nav */
-        
-    /*}*/
+    #dropdown:checked ~ label span:before{
+        transform: rotate(-45deg);
+    }
+
+    #dropdown:checked ~ label span:after{
+        transform: rotate(45deg);
+    }
 
     #dropdown:checked ~ ul {
-        display: block; /* Show the menu when the checkbox is checked */
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 50px;
+        right: 0;
+        background-color: #333;
+        width: 100%; 
+        padding-left: 0;
     }
 
-    nav ul li #muzakMaker {
-        display: block; /* Initially hide the menu */
-        /* Additional styles for your menu */
+    #playlists-container{
+        display: block;
+    }
+
+    #your-playlists, #curated{
+        /*flex-direction: column;*/
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+      
+    #muzakMaker {
+        display: block; 
+        position: static;
+        width: auto;
+        margin-right: auto;
+        padding: 10px 0;
     }
 }
 
-/* Add styles for your checkbox and label to handle the show/hide functionality of the menu */
+
 #dropdown {
     display: none; /* Hide the checkbox */
-}
-
-label[for="dropdown"] {
-    display: block;
-    width: 30px;
-    height: 3px;
-    background-color: #333;
-    position: relative;
-    cursor: pointer;
-    z-index: 15;
-    
 }
 
 ul li {
